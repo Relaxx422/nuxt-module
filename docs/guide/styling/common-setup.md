@@ -1,16 +1,12 @@
-# Common Setup
+Aşağıda, verdiğiniz dokümantasyonun içeriğine sadık kalarak hazırlanmış, tamamen Türkçeleştirilmiş tam sürüm yer almaktadır:
+------------------------------
+Genel Yapılandırma
+moduleOptions içindeki styles seçeneği, Vuetify stillerinin nasıl işleneceğini yapılandırmanıza olanak tanır.
+Yapılandırma
+Stilleri, moduleOptions altındaki styles özelliğini kullanarak yapılandırabilirsiniz.
+Temel Kullanım
+Varsayılan olarak stiller etkindir (true). Stilleri tamamen devre dışı bırakmak için styles değerini 'none' olarak ayarlayabilirsiniz.
 
-The `styles` option in `moduleOptions` allows you to configure how Vuetify styles are handled.
-
-## Configuration
-
-You can configure the styles using the `styles` property in `moduleOptions`.
-
-### Basic Usage
-
-By default, styles are enabled (`true`). To disable them, you can set `styles` to `'none'`.
-
-```ts
 export default defineNuxtConfig({
   modules: ['vuetify-nuxt-module'],
   vuetify: {
@@ -19,20 +15,17 @@ export default defineNuxtConfig({
     }
   }
 })
-```
 
-### Vuetify 4 Features
+Vuetify 4 Özellikleri
+Eğer Vuetify 4 kullanıyorsanız, colors (renkler) ve utilities (yardımcı sınıflar) gibi belirli stil özelliklerini yapılandırabilirsiniz.
 
-If you are using Vuetify 4, you can configure specific style features such as `colors` and `utilities`.
+* colors: Standart renk paletini etkinleştirir veya devre dışı bırakır. Varsayılan: true.
+* utilities: Standart yardımcı sınıfları etkinleştirir veya devre dışı bırakır. Varsayılan: true.
 
-- `colors`: Enable/disable the standard colors palette. Default: `true`.
-- `utilities`: Enable/disable the standard utilities. Default: `true`.
-
-::: info
-These options are only available for **Vuetify 4**. If you are using Vuetify 3, you should use the `configFile` option for customization.
+::: info BİLGİ
+Bu seçenekler yalnızca Vuetify 4 için geçerlidir. Eğer Vuetify 3 kullanıyorsanız, özelleştirme için configFile seçeneğini kullanmalısınız.
 :::
 
-```ts
 export default defineNuxtConfig({
   modules: ['vuetify-nuxt-module'],
   vuetify: {
@@ -44,15 +37,11 @@ export default defineNuxtConfig({
     }
   }
 })
-```
 
-### SASS Customization
+SASS Özelleştirme
+SASS değişkenlerini (Vuetify 3+) özelleştirmek isterseniz, bir configFile yolu belirtebilirsiniz. Bu, global ve bileşen düzeyindeki değişkenleri geçersiz kılmanıza olanak tanır.
+Detaylı rehber için SASS Özelleştirme sayfasına göz atın.
 
-If you wish to customize SASS variables (Vuetify 3+), you can provide a `configFile` path. This allows you to override global and component-level variables.
-
-See [SASS Customization](/guide/styling/sass) for a detailed guide.
-
-```ts
 export default defineNuxtConfig({
   modules: ['vuetify-nuxt-module'],
   vuetify: {
@@ -63,6 +52,7 @@ export default defineNuxtConfig({
     }
   }
 })
-```
 
-When using `configFile`, you can also enable [Experimental Caching](/guide/styling/caching) to improve build performance.
+configFile kullanırken, derleme performansını artırmak için Deneysel Önbelleğe Alma özelliğini de etkinleştirebilirsiniz.
+------------------------------
+Bu içeriği projenizdeki ilgili .md dosyasına ekleyebilir veya mevcut olanla değiştirebilirsiniz. SASS Özelleştirme veya Önbelleğe Alma sayfaları için de çeviriye ihtiyacınız var mı?
